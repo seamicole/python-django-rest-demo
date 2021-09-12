@@ -1,2 +1,2 @@
-# drf-sample
-A demo Django REST Framework API
+# drf-showcase
+A showcase Django REST Framework API

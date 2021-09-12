@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+boto3 = "*"
+celery = "*"
+django = ">=3"
+django-celery-beat = "*"
+django-cors-headers = "*"
+django-extensions = "*"
+django-heroku = "*"
+django-storages = "*"
+djangorestframework = "*"
+drf-nested-routers = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+python-decouple = "*"
+redis = "*"
+requests = "*"
+unidecode = "*"
+
+[dev-packages]
+flake8 = "*"
+
+[requires]
+python_version = "3.8"
+
+[packages.dynamic-rest]
+git = "https://github.com/altschool/dynamic-rest/"
