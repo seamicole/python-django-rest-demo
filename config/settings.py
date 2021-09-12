@@ -126,6 +126,7 @@ INSTALLED_APPS = [
     # Django Celery Beat
     "django_celery_beat",
     # Project Apps
+    "location",
     "user",
 ]
 
