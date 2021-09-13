@@ -16,5 +16,4 @@ class LocationConfig(AppConfig):
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Set name
     name = "location"

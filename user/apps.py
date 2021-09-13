@@ -17,5 +17,4 @@ class UserConfig(AppConfig):
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Set name
     name = "user"
