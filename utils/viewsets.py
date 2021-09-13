@@ -3,6 +3,19 @@
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 from dynamic_rest.viewsets import DynamicModelViewSet
+from rest_framework import filters
+
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ DYNAMIC MODEL VIEWSET
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+
+class DynamicModelViewSet(DynamicModelViewSet):
+    """ An extension of Dynamic REST's DynamicModelViewSet """
+
+    # Apply DRF search filter backend
+    filter_backends = DynamicModelViewSet.filter_backends + (filters.SearchFilter,)
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
