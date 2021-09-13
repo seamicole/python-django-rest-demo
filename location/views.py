@@ -5,7 +5,7 @@
 from location.models import City, Country
 from location.serializers import CitySerializer, CountrySerializer
 from utils.pagination import DynamicPagination
-from utils.viewsets import DynamicModelViewSet
+from utils.viewsets import DynamicReadOnlyModelViewSet
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -13,7 +13,7 @@ from utils.viewsets import DynamicModelViewSet
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 
-class CityViewSet(DynamicModelViewSet):
+class CityViewSet(DynamicReadOnlyModelViewSet):
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
@@ -40,7 +40,7 @@ class CityViewSet(DynamicModelViewSet):
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 
-class CountryViewSet(DynamicModelViewSet):
+class CountryViewSet(DynamicReadOnlyModelViewSet):
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
