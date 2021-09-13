@@ -79,6 +79,12 @@ def populate_locations(apps, schema_editor):
         # Add capital name to capital names by ISO3
         capital_names_by_iso3[country["iso3"]] = country.pop("capital_name")
 
+        # Get lowercase country ISO2
+        iso2_lower = country["iso2"].lower().strip()
+
+        # Add flag path to country
+        country["flag"] = f"location/country/flag/{iso2_lower}.png"
+
         # Initialize Country instance
         country = Country(**country)
 

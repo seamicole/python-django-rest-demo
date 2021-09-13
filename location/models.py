@@ -123,7 +123,9 @@ class Country(models.Model):
     # │ FLAG
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    flag = models.ImageField(upload_to="location/country/flag")
+    FLAG_UPLOAD_TO = "location/country/flag"  # Makes this accessible in migration
+
+    flag = models.ImageField(upload_to=FLAG_UPLOAD_TO)
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ __STR__

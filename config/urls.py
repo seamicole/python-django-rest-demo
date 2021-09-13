@@ -1,21 +1,52 @@
-"""config URL Configuration
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ DJANGO IMPORTS
+# └─────────────────────────────────────────────────────────────────────────────────────
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ ADMIN
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Get environment reminder
+environment_reminder = settings.ENVIRONMENT.title()
+
+# Define title from environment reminder
+TITLE = f"DRF Showcase {environment_reminder}"
+
+# Set title for Django Admin
+admin.site.site_title = TITLE
+admin.site.site_header = TITLE
+admin.site.index_title = "Admin Panel"
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ URL PATTERNS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# URL Patterns List
+urlpatterns = [path("admin/", admin.site.urls), path("api/", include("api.urls"))]
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ BROWSABLE API
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Browsable API URL Pattern
+if settings.ENABLE_BROWSABLE_API:
+
+    # Browsable API
+    urlpatterns += [path("auth/", include("rest_framework.urls"))]
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ LOCAL STORAGE
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Check if local storage is enabled
+if settings.ENVIRONMENT == settings.LOCAL and settings.USE_LOCAL_STORAGE:
+
+    # Add local static and media URLs
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

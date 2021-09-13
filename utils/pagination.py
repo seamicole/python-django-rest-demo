@@ -1,62 +1,41 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ PROJECT IMPORTS
+# │ DJANGO REST FRAMEWORK IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from location.models import City, Country
-from location.serializers import CitySerializer, CountrySerializer
-from utils.pagination import DynamicPagination
-from utils.viewsets import DynamicModelViewSet
+from dynamic_rest.pagination import DynamicPageNumberPagination
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ CITY VIEW SET
+# │ DYNAMIC PAGINATION
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 
-class CityViewSet(DynamicModelViewSet):
+class DynamicPagination(DynamicPageNumberPagination):
+    """ A dynamic pagination class for querysets """
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Define model
-    model = City
+    # Define page size and max page size
+    page_size = 20
+    max_page_size = 100
 
-    # Define serializer class
-    serializer_class = CitySerializer
-
-    # Define pagination class
-    pagination_class = DynamicPagination
-
-    # Define search fields
-    search_fields = ["name"]
-
-    # Define queryset
-    queryset = City.objects.all().select_related("country").order_by("name")
-
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ COUNTRY VIEW SET
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-
-class CountryViewSet(DynamicModelViewSet):
+    # Define page query params
+    page_query_param = "page"
+    page_size_query_param = "page_size"
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
-    # │ CLASS ATTRIBUTES
+    # │ GET PAGE METADATA
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Define model
-    model = Country
+    def get_page_metadata(self):
+        """ Constructs the metadata for the paginated response """
 
-    # Define serializer class
-    serializer_class = CountrySerializer
-
-    # Define pagination class
-    pagination_class = DynamicPagination
-
-    # Define search fields
-    search_fields = ["name", "name_native"]
-
-    # Define queryset
-    queryset = Country.objects.all().prefetch_related("cities").order_by("name")
+        # Return page metadata
+        return {
+            self.page_query_param: self.page.number,
+            self.page_size_query_param: self.get_page_size(self.request),
+            "page_count": self.page.paginator.num_pages,
+            "result_count": self.page.paginator.count,
+        }

@@ -25,9 +25,6 @@ class StaticStorage(S3Boto3Storage):
     # Set default ACL
     default_acl = "public-read"
 
-    # Define custom domain
-    custom_domain = settings.AWS_S3_STATIC_DOMAIN
-
     # Define bucket name
     bucket_name = settings.AWS_STATIC_BUCKET_NAME
 
@@ -48,9 +45,6 @@ class MediaStorage(S3Boto3Storage):
 
     # Set default ACL
     default_acl = None
-
-    # Define custom domain
-    custom_domain = settings.AWS_S3_STORAGE_DOMAIN
 
     # Define bucket name
     bucket_name = settings.AWS_STORAGE_BUCKET_NAME

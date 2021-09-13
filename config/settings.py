@@ -289,6 +289,7 @@ else:
     STATIC_URL = f"https://{AWS_S3_STATIC_DOMAIN}/{STATICFILES_LOCATION}/"
     MEDIA_URL = f"https://{AWS_S3_STORAGE_DOMAIN}/{MEDIAFILES_LOCATION}/"
 
+
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DJANGO REST FRAMEWORK
 # └─────────────────────────────────────────────────────────────────────────────────────
@@ -306,9 +307,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-# Dynamic Rest Configuration
-DYNAMIC_REST = {"ENABLE_BROWSABLE_API": ENABLE_BROWSABLE_API}
-
 # Check if browsable API is enabled
 if ENABLE_BROWSABLE_API:
 
@@ -316,6 +314,22 @@ if ENABLE_BROWSABLE_API:
     REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"].append(
         "dynamic_rest.renderers.DynamicBrowsableAPIRenderer"
     )
+
+# Define Dynamic REST settings
+DYNAMIC_REST = {
+    "DEBUG": DEBUG,
+    "ENABLE_BROWSABLE_API": ENABLE_BROWSABLE_API,
+    "ENABLE_LINKS": True,
+    "ENABLE_SERIALIZER_CACHE": True,
+    "ENABLE_SERIALIZER_OPTIMIZATIONS": True,
+    "DEFER_MANY_RELATIONS": False,
+    "MAX_PAGE_SIZE": 100,
+    "PAGE_QUERY_PARAM": "page",
+    "PAGE_SIZE": 20,
+    "PAGE_SIZE_QUERY_PARAM": "page_size",
+    "ADDITIONAL_PRIMARY_RESOURCE_PREFIX": "+",
+    "ENABLE_HOST_RELATIVE_LINKS": True,
+}
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ REDIS
