@@ -1053,7 +1053,7 @@
         "longitude": -61.66666666,
         "is_un_member": true,
         "is_un_member_at": "1974-09-17",
-        "capital_name": "St. George's"
+        "capital_name": "Saint George's"
     },
     {
         "name": "Guadeloupe",
@@ -1101,7 +1101,7 @@
         "longitude": -2.58333333,
         "is_un_member": false,
         "is_un_member_at": null,
-        "capital_name": "St Peter Port"
+        "capital_name": "Saint Peter Port"
     },
     {
         "name": "Guinea",
@@ -1281,7 +1281,7 @@
         "longitude": -4.5,
         "is_un_member": false,
         "is_un_member_at": null,
-        "capital_name": "Douglas, Isle of Man"
+        "capital_name": "Douglas"
     },
     {
         "name": "Israel",
@@ -1509,7 +1509,7 @@
         "longitude": 17.0,
         "is_un_member": true,
         "is_un_member_at": "1955-12-14",
-        "capital_name": "Tripolis"
+        "capital_name": "Tripoli"
     },
     {
         "name": "Liechtenstein",
@@ -1557,7 +1557,7 @@
         "longitude": 113.55,
         "is_un_member": false,
         "is_un_member_at": null,
-        "capital_name": "Macao"
+        "capital_name": "Macau"
     },
     {
         "name": "Macedonia",
@@ -2397,7 +2397,7 @@
         "longitude": 103.8,
         "is_un_member": true,
         "is_un_member_at": "1965-09-21",
-        "capital_name": "Singapur"
+        "capital_name": "Singapore"
     },
     {
         "name": "Sint Maarten",
@@ -2589,7 +2589,7 @@
         "longitude": 8.0,
         "is_un_member": true,
         "is_un_member_at": "2002-09-10",
-        "capital_name": "Berne"
+        "capital_name": "Bern"
     },
     {
         "name": "Syria",
@@ -2805,7 +2805,7 @@
         "longitude": 32.0,
         "is_un_member": true,
         "is_un_member_at": "1945-10-24",
-        "capital_name": "Kiev"
+        "capital_name": "Kyiv"
     },
     {
         "name": "United Arab Emirates",
@@ -2841,7 +2841,7 @@
         "longitude": -97.0,
         "is_un_member": true,
         "is_un_member_at": "1945-10-24",
-        "capital_name": "Washington"
+        "capital_name": "Washington, D.C."
     },
     {
         "name": "United States Minor Outlying Islands",
@@ -2961,7 +2961,7 @@
         "longitude": -13.0,
         "is_un_member": false,
         "is_un_member_at": null,
-        "capital_name": "El-Aaiun"
+        "capital_name": "Laayoune"
     },
     {
         "name": "Yemen",

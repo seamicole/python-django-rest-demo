@@ -2,7 +2,42 @@
 # │ GENERAL IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
+import json
+
 from unidecode import unidecode
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ TYPE IMPORTS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+from typing import Optional
+
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ LOAD JSON
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+
+def load_json(path: str) -> Optional[dict]:
+    """ Loads a JSON file from a file path and returns a dictionary or None """
+
+    # Initialize try-except block
+    try:
+
+        # Open file
+        with open(path) as f:
+
+            # Load data
+            data = json.load(f)
+
+        # Return data
+        return data
+
+    # Handle FileNotFoundError
+    except FileNotFoundError:
+
+        # Return None
+        return None
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -10,7 +45,7 @@ from unidecode import unidecode
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 
-def slugify(string, decode=False, space=None):
+def slugify(string: str, decode: bool = False, space: str = None) -> str:
     """ Returns a slugified version of a string input """
 
     # Check if string is null
