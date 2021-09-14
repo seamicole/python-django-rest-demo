@@ -38,6 +38,9 @@ ENVIRONMENT = config("ENVIRONMENT", default=PRODUCTION)
 # Retrieve debug from .env
 DEBUG = config("DEBUG", cast=bool, default=False) and ENVIRONMENT != PRODUCTION
 
+# Determine whether to enable Django Admin
+ENABLE_DJANGO_ADMIN = config("ENABLE_DJANGO_ADMIN", cast=bool, default=True)
+
 # Determine whether to enable browsable API
 ENABLE_BROWSABLE_API = config(
     "ENABLE_BROWSABLE_API", cast=bool, default=ENVIRONMENT in [LOCAL, STAGING]
@@ -288,7 +291,6 @@ else:
     # Construct static and media file URLs
     STATIC_URL = f"https://{AWS_S3_STATIC_DOMAIN}/{STATICFILES_LOCATION}/"
     MEDIA_URL = f"https://{AWS_S3_STORAGE_DOMAIN}/{MEDIAFILES_LOCATION}/"
-
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DJANGO REST FRAMEWORK

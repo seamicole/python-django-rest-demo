@@ -9,26 +9,32 @@ from django.urls import include, path
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ ADMIN
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-# Get environment reminder
-environment_reminder = settings.ENVIRONMENT.title()
-
-# Define title from environment reminder
-TITLE = f"DRF Showcase {environment_reminder}"
-
-# Set title for Django Admin
-admin.site.site_title = TITLE
-admin.site.site_header = TITLE
-admin.site.index_title = "Admin Panel"
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ URL PATTERNS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # URL Patterns List
-urlpatterns = [path("admin/", admin.site.urls), path("api/", include("api.urls"))]
+urlpatterns = [path("api/", include("api.urls"))]
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ DJANGO ADMIN
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# Admin URL Pattern
+if settings.ENABLE_DJANGO_ADMIN:
+
+    # Get environment reminder
+    environment_reminder = settings.ENVIRONMENT.title()
+
+    # Define title from environment reminder
+    TITLE = f"DRF Showcase {environment_reminder}"
+
+    # Set title for Django Admin
+    admin.site.site_title = TITLE
+    admin.site.site_header = TITLE
+    admin.site.index_title = "Admin Panel"
+
+    # Add Django Admin URL patterns
+    urlpatterns += [path("admin/", admin.site.urls)]
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ BROWSABLE API
@@ -37,7 +43,7 @@ urlpatterns = [path("admin/", admin.site.urls), path("api/", include("api.urls")
 # Browsable API URL Pattern
 if settings.ENABLE_BROWSABLE_API:
 
-    # Browsable API
+    # Add browsable API URL patterns
     urlpatterns += [path("auth/", include("rest_framework.urls"))]
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
