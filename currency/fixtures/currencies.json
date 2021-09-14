@@ -1,0 +1,1028 @@
+[
+    {
+        "iso3": "AFG",
+        "name": "Afghan Afghani",
+        "name_plural": "Afghan Afghanis",
+        "code": "AFN",
+        "number": 971,
+        "symbol": "Af",
+        "symbol_native": "\u060b"
+    },
+    {
+        "iso3": "ALB",
+        "name": "Albanian Lek",
+        "name_plural": "Albanian lek\u00eb",
+        "code": "ALL",
+        "number": 8,
+        "symbol": "ALL",
+        "symbol_native": "Lek"
+    },
+    {
+        "iso3": "DZA",
+        "name": "Algerian Dinar",
+        "name_plural": "Algerian dinars",
+        "code": "DZD",
+        "number": 12,
+        "symbol": "DA",
+        "symbol_native": "\u062f.\u062c.\u200f"
+    },
+    {
+        "iso3": "ARG",
+        "name": "Argentine Peso",
+        "name_plural": "Argentine pesos",
+        "code": "ARS",
+        "number": 32,
+        "symbol": "AR$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "ARM",
+        "name": "Armenian Dram",
+        "name_plural": "Armenian drams",
+        "code": "AMD",
+        "number": 51,
+        "symbol": "AMD",
+        "symbol_native": "\u0564\u0580."
+    },
+    {
+        "iso3": "AUS",
+        "name": "Australian Dollar",
+        "name_plural": "Australian dollars",
+        "code": "AUD",
+        "number": 36,
+        "symbol": "AU$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "AZE",
+        "name": "Azerbaijani Manat",
+        "name_plural": "Azerbaijani manats",
+        "code": "AZN",
+        "number": 944,
+        "symbol": "man.",
+        "symbol_native": "\u043c\u0430\u043d."
+    },
+    {
+        "iso3": "BHR",
+        "name": "Bahraini Dinar",
+        "name_plural": "Bahraini dinars",
+        "code": "BHD",
+        "number": 48,
+        "symbol": "BD",
+        "symbol_native": "\u062f.\u0628.\u200f"
+    },
+    {
+        "iso3": "BGD",
+        "name": "Bangladeshi Taka",
+        "name_plural": "Bangladeshi takas",
+        "code": "BDT",
+        "number": 50,
+        "symbol": "Tk",
+        "symbol_native": "\u09f3"
+    },
+    {
+        "iso3": "BLZ",
+        "name": "Belize Dollar",
+        "name_plural": "Belize dollars",
+        "code": "BZD",
+        "number": 84,
+        "symbol": "BZ$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "BOL",
+        "name": "Bolivian Boliviano",
+        "name_plural": "Bolivian bolivianos",
+        "code": "BOB",
+        "number": 68,
+        "symbol": "Bs",
+        "symbol_native": "Bs"
+    },
+    {
+        "iso3": "BIH",
+        "name": "Bosnia-Herzegovina Convertible Mark",
+        "name_plural": "Bosnia-Herzegovina convertible marks",
+        "code": "BAM",
+        "number": 977,
+        "symbol": "KM",
+        "symbol_native": "KM"
+    },
+    {
+        "iso3": "BWA",
+        "name": "Botswanan Pula",
+        "name_plural": "Botswanan pulas",
+        "code": "BWP",
+        "number": 72,
+        "symbol": "BWP",
+        "symbol_native": "P"
+    },
+    {
+        "iso3": "BRA",
+        "name": "Brazilian Real",
+        "name_plural": "Brazilian reals",
+        "code": "BRL",
+        "number": 986,
+        "symbol": "R$",
+        "symbol_native": "R$"
+    },
+    {
+        "iso3": "GBR",
+        "name": "British Pound Sterling",
+        "name_plural": "British pounds sterling",
+        "code": "GBP",
+        "number": 826,
+        "symbol": "\u00a3",
+        "symbol_native": "\u00a3"
+    },
+    {
+        "iso3": "BRN",
+        "name": "Brunei Dollar",
+        "name_plural": "Brunei dollars",
+        "code": "BND",
+        "number": 96,
+        "symbol": "BN$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "BGR",
+        "name": "Bulgarian Lev",
+        "name_plural": "Bulgarian leva",
+        "code": "BGN",
+        "number": 975,
+        "symbol": "BGN",
+        "symbol_native": "\u043b\u0432."
+    },
+    {
+        "iso3": "BDI",
+        "name": "Burundian Franc",
+        "name_plural": "Burundian francs",
+        "code": "BIF",
+        "number": 108,
+        "symbol": "FBu",
+        "symbol_native": "FBu"
+    },
+    {
+        "iso3": null,
+        "name": "CFA Franc BCEAO",
+        "name_plural": "CFA francs BCEAO",
+        "code": "XOF",
+        "number": 952,
+        "symbol": "CFA",
+        "symbol_native": "CFA"
+    },
+    {
+        "iso3": null,
+        "name": "CFA Franc BEAC",
+        "name_plural": "CFA francs BEAC",
+        "code": "XAF",
+        "number": 950,
+        "symbol": "FCFA",
+        "symbol_native": "FCFA"
+    },
+    {
+        "iso3": "KHM",
+        "name": "Cambodian Riel",
+        "name_plural": "Cambodian riels",
+        "code": "KHR",
+        "number": 116,
+        "symbol": "KHR",
+        "symbol_native": "\u17db"
+    },
+    {
+        "iso3": "CAN",
+        "name": "Canadian Dollar",
+        "name_plural": "Canadian dollars",
+        "code": "CAD",
+        "number": 124,
+        "symbol": "CA$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "CPV",
+        "name": "Cape Verdean Escudo",
+        "name_plural": "Cape Verdean escudos",
+        "code": "CVE",
+        "number": 132,
+        "symbol": "CV$",
+        "symbol_native": "CV$"
+    },
+    {
+        "iso3": "CHL",
+        "name": "Chilean Peso",
+        "name_plural": "Chilean pesos",
+        "code": "CLP",
+        "number": 152,
+        "symbol": "CL$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "CHN",
+        "name": "Chinese Yuan",
+        "name_plural": "Chinese yuan",
+        "code": "CNY",
+        "number": 156,
+        "symbol": "CN\u00a5",
+        "symbol_native": "CN\u00a5"
+    },
+    {
+        "iso3": "COL",
+        "name": "Colombian Peso",
+        "name_plural": "Colombian pesos",
+        "code": "COP",
+        "number": 170,
+        "symbol": "CO$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "COM",
+        "name": "Comorian Franc",
+        "name_plural": "Comorian francs",
+        "code": "KMF",
+        "number": 174,
+        "symbol": "CF",
+        "symbol_native": "FC"
+    },
+    {
+        "iso3": "COD",
+        "name": "Congolese Franc",
+        "name_plural": "Congolese francs",
+        "code": "CDF",
+        "number": 976,
+        "symbol": "CDF",
+        "symbol_native": "FrCD"
+    },
+    {
+        "iso3": "CRI",
+        "name": "Costa Rican Col\u00f3n",
+        "name_plural": "Costa Rican col\u00f3ns",
+        "code": "CRC",
+        "number": 188,
+        "symbol": "\u20a1",
+        "symbol_native": "\u20a1"
+    },
+    {
+        "iso3": "HRV",
+        "name": "Croatian Kuna",
+        "name_plural": "Croatian kunas",
+        "code": "HRK",
+        "number": 191,
+        "symbol": "kn",
+        "symbol_native": "kn"
+    },
+    {
+        "iso3": "CZE",
+        "name": "Czech Republic Koruna",
+        "name_plural": "Czech Republic korunas",
+        "code": "CZK",
+        "number": 203,
+        "symbol": "K\u010d",
+        "symbol_native": "K\u010d"
+    },
+    {
+        "iso3": "DNK",
+        "name": "Danish Krone",
+        "name_plural": "Danish kroner",
+        "code": "DKK",
+        "number": 208,
+        "symbol": "Dkr",
+        "symbol_native": "kr"
+    },
+    {
+        "iso3": "DJI",
+        "name": "Djiboutian Franc",
+        "name_plural": "Djiboutian francs",
+        "code": "DJF",
+        "number": 262,
+        "symbol": "Fdj",
+        "symbol_native": "Fdj"
+    },
+    {
+        "iso3": "DOM",
+        "name": "Dominican Peso",
+        "name_plural": "Dominican pesos",
+        "code": "DOP",
+        "number": 214,
+        "symbol": "RD$",
+        "symbol_native": "RD$"
+    },
+    {
+        "iso3": "EGY",
+        "name": "Egyptian Pound",
+        "name_plural": "Egyptian pounds",
+        "code": "EGP",
+        "number": 818,
+        "symbol": "EGP",
+        "symbol_native": "\u062c.\u0645.\u200f"
+    },
+    {
+        "iso3": "ERI",
+        "name": "Eritrean Nakfa",
+        "name_plural": "Eritrean nakfas",
+        "code": "ERN",
+        "number": 232,
+        "symbol": "Nfk",
+        "symbol_native": "Nfk"
+    },
+    {
+        "iso3": "ETH",
+        "name": "Ethiopian Birr",
+        "name_plural": "Ethiopian birrs",
+        "code": "ETB",
+        "number": 230,
+        "symbol": "Br",
+        "symbol_native": "Br"
+    },
+    {
+        "iso3": null,
+        "name": "Euro",
+        "name_plural": "euros",
+        "code": "EUR",
+        "number": 978,
+        "symbol": "\u20ac",
+        "symbol_native": "\u20ac"
+    },
+    {
+        "iso3": "GEO",
+        "name": "Georgian Lari",
+        "name_plural": "Georgian laris",
+        "code": "GEL",
+        "number": 981,
+        "symbol": "GEL",
+        "symbol_native": "GEL"
+    },
+    {
+        "iso3": "GHA",
+        "name": "Ghanaian Cedi",
+        "name_plural": "Ghanaian cedis",
+        "code": "GHS",
+        "number": 936,
+        "symbol": "GH\u20b5",
+        "symbol_native": "GH\u20b5"
+    },
+    {
+        "iso3": "GTM",
+        "name": "Guatemalan Quetzal",
+        "name_plural": "Guatemalan quetzals",
+        "code": "GTQ",
+        "number": 320,
+        "symbol": "GTQ",
+        "symbol_native": "Q"
+    },
+    {
+        "iso3": "GIN",
+        "name": "Guinean Franc",
+        "name_plural": "Guinean francs",
+        "code": "GNF",
+        "number": 324,
+        "symbol": "FG",
+        "symbol_native": "FG"
+    },
+    {
+        "iso3": "HND",
+        "name": "Honduran Lempira",
+        "name_plural": "Honduran lempiras",
+        "code": "HNL",
+        "number": 340,
+        "symbol": "HNL",
+        "symbol_native": "L"
+    },
+    {
+        "iso3": "HKG",
+        "name": "Hong Kong Dollar",
+        "name_plural": "Hong Kong dollars",
+        "code": "HKD",
+        "number": 344,
+        "symbol": "HK$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "HUN",
+        "name": "Hungarian Forint",
+        "name_plural": "Hungarian forints",
+        "code": "HUF",
+        "number": 348,
+        "symbol": "Ft",
+        "symbol_native": "Ft"
+    },
+    {
+        "iso3": "ISL",
+        "name": "Icelandic Kr\u00f3na",
+        "name_plural": "Icelandic kr\u00f3nur",
+        "code": "ISK",
+        "number": 352,
+        "symbol": "Ikr",
+        "symbol_native": "kr"
+    },
+    {
+        "iso3": "IND",
+        "name": "Indian Rupee",
+        "name_plural": "Indian rupees",
+        "code": "INR",
+        "number": 356,
+        "symbol": "Rs",
+        "symbol_native": "\u099f\u0995\u09be"
+    },
+    {
+        "iso3": "IDN",
+        "name": "Indonesian Rupiah",
+        "name_plural": "Indonesian rupiahs",
+        "code": "IDR",
+        "number": 360,
+        "symbol": "Rp",
+        "symbol_native": "Rp"
+    },
+    {
+        "iso3": "IRN",
+        "name": "Iranian Rial",
+        "name_plural": "Iranian rials",
+        "code": "IRR",
+        "number": 364,
+        "symbol": "IRR",
+        "symbol_native": "\ufdfc"
+    },
+    {
+        "iso3": "IRQ",
+        "name": "Iraqi Dinar",
+        "name_plural": "Iraqi dinars",
+        "code": "IQD",
+        "number": 368,
+        "symbol": "IQD",
+        "symbol_native": "\u062f.\u0639.\u200f"
+    },
+    {
+        "iso3": "ISR",
+        "name": "Israeli New Sheqel",
+        "name_plural": "Israeli new sheqels",
+        "code": "ILS",
+        "number": 376,
+        "symbol": "\u20aa",
+        "symbol_native": "\u20aa"
+    },
+    {
+        "iso3": "JAM",
+        "name": "Jamaican Dollar",
+        "name_plural": "Jamaican dollars",
+        "code": "JMD",
+        "number": 388,
+        "symbol": "J$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "JPN",
+        "name": "Japanese Yen",
+        "name_plural": "Japanese yen",
+        "code": "JPY",
+        "number": 392,
+        "symbol": "\u00a5",
+        "symbol_native": "\uffe5"
+    },
+    {
+        "iso3": "JOR",
+        "name": "Jordanian Dinar",
+        "name_plural": "Jordanian dinars",
+        "code": "JOD",
+        "number": 400,
+        "symbol": "JD",
+        "symbol_native": "\u062f.\u0623.\u200f"
+    },
+    {
+        "iso3": "KAZ",
+        "name": "Kazakhstani Tenge",
+        "name_plural": "Kazakhstani tenges",
+        "code": "KZT",
+        "number": 398,
+        "symbol": "KZT",
+        "symbol_native": "\u0442\u04a3\u0433."
+    },
+    {
+        "iso3": "KEN",
+        "name": "Kenyan Shilling",
+        "name_plural": "Kenyan shillings",
+        "code": "KES",
+        "number": 404,
+        "symbol": "Ksh",
+        "symbol_native": "Ksh"
+    },
+    {
+        "iso3": "KWT",
+        "name": "Kuwaiti Dinar",
+        "name_plural": "Kuwaiti dinars",
+        "code": "KWD",
+        "number": 414,
+        "symbol": "KD",
+        "symbol_native": "\u062f.\u0643.\u200f"
+    },
+    {
+        "iso3": "LBN",
+        "name": "Lebanese Pound",
+        "name_plural": "Lebanese pounds",
+        "code": "LBP",
+        "number": 422,
+        "symbol": "LB\u00a3",
+        "symbol_native": "\u0644.\u0644.\u200f"
+    },
+    {
+        "iso3": "LBY",
+        "name": "Libyan Dinar",
+        "name_plural": "Libyan dinars",
+        "code": "LYD",
+        "number": 434,
+        "symbol": "LD",
+        "symbol_native": "\u062f.\u0644.\u200f"
+    },
+    {
+        "iso3": "MAC",
+        "name": "Macanese Pataca",
+        "name_plural": "Macanese patacas",
+        "code": "MOP",
+        "number": 446,
+        "symbol": "MOP$",
+        "symbol_native": "MOP$"
+    },
+    {
+        "iso3": "MKD",
+        "name": "Macedonian Denar",
+        "name_plural": "Macedonian denari",
+        "code": "MKD",
+        "number": 807,
+        "symbol": "MKD",
+        "symbol_native": "MKD"
+    },
+    {
+        "iso3": "MDG",
+        "name": "Malagasy Ariary",
+        "name_plural": "Malagasy Ariaries",
+        "code": "MGA",
+        "number": 969,
+        "symbol": "MGA",
+        "symbol_native": "MGA"
+    },
+    {
+        "iso3": "MYS",
+        "name": "Malaysian Ringgit",
+        "name_plural": "Malaysian ringgits",
+        "code": "MYR",
+        "number": 458,
+        "symbol": "RM",
+        "symbol_native": "RM"
+    },
+    {
+        "iso3": "MUS",
+        "name": "Mauritian Rupee",
+        "name_plural": "Mauritian rupees",
+        "code": "MUR",
+        "number": 480,
+        "symbol": "MURs",
+        "symbol_native": "MURs"
+    },
+    {
+        "iso3": "MEX",
+        "name": "Mexican Peso",
+        "name_plural": "Mexican pesos",
+        "code": "MXN",
+        "number": 484,
+        "symbol": "MX$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "MDA",
+        "name": "Moldovan Leu",
+        "name_plural": "Moldovan lei",
+        "code": "MDL",
+        "number": 498,
+        "symbol": "MDL",
+        "symbol_native": "MDL"
+    },
+    {
+        "iso3": "MNG",
+        "name": "Mongolian t\u00f6gr\u00f6g",
+        "name_plural": "Mongolian t\u00f6gr\u00f6g",
+        "code": "MNT",
+        "number": 496,
+        "symbol": "\u20ae",
+        "symbol_native": "\u20ae"
+    },
+    {
+        "iso3": "MAR",
+        "name": "Moroccan Dirham",
+        "name_plural": "Moroccan dirhams",
+        "code": "MAD",
+        "number": 504,
+        "symbol": "MAD",
+        "symbol_native": "\u062f.\u0645.\u200f"
+    },
+    {
+        "iso3": "MOZ",
+        "name": "Mozambican Metical",
+        "name_plural": "Mozambican meticals",
+        "code": "MZN",
+        "number": 943,
+        "symbol": "MTn",
+        "symbol_native": "MTn"
+    },
+    {
+        "iso3": "MMR",
+        "name": "Myanma Kyat",
+        "name_plural": "Myanma kyats",
+        "code": "MMK",
+        "number": 104,
+        "symbol": "MMK",
+        "symbol_native": "K"
+    },
+    {
+        "iso3": "NAM",
+        "name": "Namibian Dollar",
+        "name_plural": "Namibian dollars",
+        "code": "NAD",
+        "number": 516,
+        "symbol": "N$",
+        "symbol_native": "N$"
+    },
+    {
+        "iso3": "NPL",
+        "name": "Nepalese Rupee",
+        "name_plural": "Nepalese rupees",
+        "code": "NPR",
+        "number": 524,
+        "symbol": "NPRs",
+        "symbol_native": "\u0928\u0947\u0930\u0942"
+    },
+    {
+        "iso3": "TWN",
+        "name": "New Taiwan Dollar",
+        "name_plural": "New Taiwan dollars",
+        "code": "TWD",
+        "number": 901,
+        "symbol": "NT$",
+        "symbol_native": "NT$"
+    },
+    {
+        "iso3": "NZL",
+        "name": "New Zealand Dollar",
+        "name_plural": "New Zealand dollars",
+        "code": "NZD",
+        "number": 554,
+        "symbol": "NZ$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "NIC",
+        "name": "Nicaraguan C\u00f3rdoba",
+        "name_plural": "Nicaraguan c\u00f3rdobas",
+        "code": "NIO",
+        "number": 558,
+        "symbol": "C$",
+        "symbol_native": "C$"
+    },
+    {
+        "iso3": "NGA",
+        "name": "Nigerian Naira",
+        "name_plural": "Nigerian nairas",
+        "code": "NGN",
+        "number": 566,
+        "symbol": "\u20a6",
+        "symbol_native": "\u20a6"
+    },
+    {
+        "iso3": "NOR",
+        "name": "Norwegian Krone",
+        "name_plural": "Norwegian kroner",
+        "code": "NOK",
+        "number": 578,
+        "symbol": "Nkr",
+        "symbol_native": "kr"
+    },
+    {
+        "iso3": "OMN",
+        "name": "Omani Rial",
+        "name_plural": "Omani rials",
+        "code": "OMR",
+        "number": 512,
+        "symbol": "OMR",
+        "symbol_native": "\u0631.\u0639.\u200f"
+    },
+    {
+        "iso3": "PAK",
+        "name": "Pakistani Rupee",
+        "name_plural": "Pakistani rupees",
+        "code": "PKR",
+        "number": 586,
+        "symbol": "PKRs",
+        "symbol_native": "\u20a8"
+    },
+    {
+        "iso3": "PAN",
+        "name": "Panamanian Balboa",
+        "name_plural": "Panamanian balboas",
+        "code": "PAB",
+        "number": 590,
+        "symbol": "B/.",
+        "symbol_native": "B/."
+    },
+    {
+        "iso3": "PRY",
+        "name": "Paraguayan Guarani",
+        "name_plural": "Paraguayan guaranis",
+        "code": "PYG",
+        "number": 600,
+        "symbol": "\u20b2",
+        "symbol_native": "\u20b2"
+    },
+    {
+        "iso3": "PER",
+        "name": "Peruvian Nuevo Sol",
+        "name_plural": "Peruvian nuevos soles",
+        "code": "PEN",
+        "number": 604,
+        "symbol": "S/.",
+        "symbol_native": "S/."
+    },
+    {
+        "iso3": "PHL",
+        "name": "Philippine Peso",
+        "name_plural": "Philippine pesos",
+        "code": "PHP",
+        "number": 608,
+        "symbol": "\u20b1",
+        "symbol_native": "\u20b1"
+    },
+    {
+        "iso3": "POL",
+        "name": "Polish Zloty",
+        "name_plural": "Polish zlotys",
+        "code": "PLN",
+        "number": 985,
+        "symbol": "z\u0142",
+        "symbol_native": "z\u0142"
+    },
+    {
+        "iso3": "QAT",
+        "name": "Qatari Rial",
+        "name_plural": "Qatari rials",
+        "code": "QAR",
+        "number": 634,
+        "symbol": "QR",
+        "symbol_native": "\u0631.\u0642.\u200f"
+    },
+    {
+        "iso3": "ROU",
+        "name": "Romanian Leu",
+        "name_plural": "Romanian lei",
+        "code": "RON",
+        "number": 946,
+        "symbol": "RON",
+        "symbol_native": "RON"
+    },
+    {
+        "iso3": "RUS",
+        "name": "Russian Ruble",
+        "name_plural": "Russian rubles",
+        "code": "RUB",
+        "number": 643,
+        "symbol": "RUB",
+        "symbol_native": "\u0440\u0443\u0431."
+    },
+    {
+        "iso3": "RWA",
+        "name": "Rwandan Franc",
+        "name_plural": "Rwandan francs",
+        "code": "RWF",
+        "number": 646,
+        "symbol": "RWF",
+        "symbol_native": "FR"
+    },
+    {
+        "iso3": "SAU",
+        "name": "Saudi Riyal",
+        "name_plural": "Saudi riyals",
+        "code": "SAR",
+        "number": 682,
+        "symbol": "SR",
+        "symbol_native": "\u0631.\u0633.\u200f"
+    },
+    {
+        "iso3": "SRB",
+        "name": "Serbian Dinar",
+        "name_plural": "Serbian dinars",
+        "code": "RSD",
+        "number": 941,
+        "symbol": "din.",
+        "symbol_native": "\u0434\u0438\u043d."
+    },
+    {
+        "iso3": "SGP",
+        "name": "Singapore Dollar",
+        "name_plural": "Singapore dollars",
+        "code": "SGD",
+        "number": 702,
+        "symbol": "S$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "SOM",
+        "name": "Somali Shilling",
+        "name_plural": "Somali shillings",
+        "code": "SOS",
+        "number": 706,
+        "symbol": "Ssh",
+        "symbol_native": "Ssh"
+    },
+    {
+        "iso3": "ZAF",
+        "name": "South African Rand",
+        "name_plural": "South African rand",
+        "code": "ZAR",
+        "number": 710,
+        "symbol": "R",
+        "symbol_native": "R"
+    },
+    {
+        "iso3": "KOR",
+        "name": "South Korean Won",
+        "name_plural": "South Korean won",
+        "code": "KRW",
+        "number": 410,
+        "symbol": "\u20a9",
+        "symbol_native": "\u20a9"
+    },
+    {
+        "iso3": "LKA",
+        "name": "Sri Lankan Rupee",
+        "name_plural": "Sri Lankan rupees",
+        "code": "LKR",
+        "number": 144,
+        "symbol": "SLRs",
+        "symbol_native": "SL Re"
+    },
+    {
+        "iso3": "SDN",
+        "name": "Sudanese Pound",
+        "name_plural": "Sudanese pounds",
+        "code": "SDG",
+        "number": 938,
+        "symbol": "SDG",
+        "symbol_native": "SDG"
+    },
+    {
+        "iso3": "SWE",
+        "name": "Swedish Krona",
+        "name_plural": "Swedish kronor",
+        "code": "SEK",
+        "number": 752,
+        "symbol": "Skr",
+        "symbol_native": "kr"
+    },
+    {
+        "iso3": "CHE",
+        "name": "Swiss Franc",
+        "name_plural": "Swiss francs",
+        "code": "CHF",
+        "number": 756,
+        "symbol": "CHF",
+        "symbol_native": "CHF"
+    },
+    {
+        "iso3": "SYR",
+        "name": "Syrian Pound",
+        "name_plural": "Syrian pounds",
+        "code": "SYP",
+        "number": 760,
+        "symbol": "SY\u00a3",
+        "symbol_native": "\u0644.\u0633.\u200f"
+    },
+    {
+        "iso3": "TZA",
+        "name": "Tanzanian Shilling",
+        "name_plural": "Tanzanian shillings",
+        "code": "TZS",
+        "number": 834,
+        "symbol": "TSh",
+        "symbol_native": "TSh"
+    },
+    {
+        "iso3": "THA",
+        "name": "Thai Baht",
+        "name_plural": "Thai baht",
+        "code": "THB",
+        "number": 764,
+        "symbol": "\u0e3f",
+        "symbol_native": "\u0e3f"
+    },
+    {
+        "iso3": "TON",
+        "name": "Tongan Pa\u02bbanga",
+        "name_plural": "Tongan pa\u02bbanga",
+        "code": "TOP",
+        "number": 776,
+        "symbol": "T$",
+        "symbol_native": "T$"
+    },
+    {
+        "iso3": "TTO",
+        "name": "Trinidad and Tobago Dollar",
+        "name_plural": "Trinidad and Tobago dollars",
+        "code": "TTD",
+        "number": 780,
+        "symbol": "TT$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "TUN",
+        "name": "Tunisian Dinar",
+        "name_plural": "Tunisian dinars",
+        "code": "TND",
+        "number": 788,
+        "symbol": "DT",
+        "symbol_native": "\u062f.\u062a.\u200f"
+    },
+    {
+        "iso3": "TUR",
+        "name": "Turkish Lira",
+        "name_plural": "Turkish Lira",
+        "code": "TRY",
+        "number": 949,
+        "symbol": "TL",
+        "symbol_native": "TL"
+    },
+    {
+        "iso3": "USA",
+        "name": "US Dollar",
+        "name_plural": "US dollars",
+        "code": "USD",
+        "number": 840,
+        "symbol": "$",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "UGA",
+        "name": "Ugandan Shilling",
+        "name_plural": "Ugandan shillings",
+        "code": "UGX",
+        "number": 800,
+        "symbol": "USh",
+        "symbol_native": "USh"
+    },
+    {
+        "iso3": "UKR",
+        "name": "Ukrainian Hryvnia",
+        "name_plural": "Ukrainian hryvnias",
+        "code": "UAH",
+        "number": 980,
+        "symbol": "\u20b4",
+        "symbol_native": "\u20b4"
+    },
+    {
+        "iso3": "ARE",
+        "name": "United Arab Emirates Dirham",
+        "name_plural": "UAE dirhams",
+        "code": "AED",
+        "number": 784,
+        "symbol": "AED",
+        "symbol_native": "\u062f.\u0625.\u200f"
+    },
+    {
+        "iso3": "URY",
+        "name": "Uruguayan Peso",
+        "name_plural": "Uruguayan pesos",
+        "code": "UYU",
+        "number": 858,
+        "symbol": "$U",
+        "symbol_native": "$"
+    },
+    {
+        "iso3": "UZB",
+        "name": "Uzbekistan Som",
+        "name_plural": "Uzbekistan som",
+        "code": "UZS",
+        "number": 860,
+        "symbol": "UZS",
+        "symbol_native": "UZS"
+    },
+    {
+        "iso3": "VEN",
+        "name": "Venezuelan Bol\u00edvar",
+        "name_plural": "Venezuelan bol\u00edvars",
+        "code": "VEF",
+        "number": 937,
+        "symbol": "Bs.F.",
+        "symbol_native": "Bs.F."
+    },
+    {
+        "iso3": "VNM",
+        "name": "Vietnamese Dong",
+        "name_plural": "Vietnamese dong",
+        "code": "VND",
+        "number": 704,
+        "symbol": "\u20ab",
+        "symbol_native": "\u20ab"
+    },
+    {
+        "iso3": "YEM",
+        "name": "Yemeni Rial",
+        "name_plural": "Yemeni rials",
+        "code": "YER",
+        "number": 886,
+        "symbol": "YR",
+        "symbol_native": "\u0631.\u064a.\u200f"
+    }
+]
