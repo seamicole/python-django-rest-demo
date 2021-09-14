@@ -86,6 +86,18 @@ class Country(models.Model):
     )
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
+    # │ CURRENCY
+    # └─────────────────────────────────────────────────────────────────────────────────
+
+    currency = models.ForeignKey(
+        "currency.Currency",
+        related_name="countries",
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+    )
+
+    # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ NAME
     # └─────────────────────────────────────────────────────────────────────────────────
 
@@ -123,9 +135,7 @@ class Country(models.Model):
     # │ FLAG
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    FLAG_UPLOAD_TO = "location/country/flag"  # Makes this accessible in migration
-
-    flag = models.ImageField(upload_to=FLAG_UPLOAD_TO)
+    flag = models.ImageField(upload_to="location/country/flag")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ __STR__

@@ -16,6 +16,7 @@ from rest_framework.response import Response
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
+from currency.models import Currency
 from location.models import City, Country
 from location.serializers import CitySerializer, CountrySerializer
 from utils.pagination import DynamicPagination
@@ -28,6 +29,7 @@ from utils.viewsets import DynamicReadOnlyModelViewSet
 
 
 class CityViewSet(DynamicReadOnlyModelViewSet):
+    """ City View Set """
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
@@ -58,6 +60,7 @@ class CityViewSet(DynamicReadOnlyModelViewSet):
 
 
 class CountryViewSet(DynamicReadOnlyModelViewSet):
+    """ Country View Set """
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
@@ -116,6 +119,7 @@ class CountryViewSet(DynamicReadOnlyModelViewSet):
 
 
 class CityOfCountryViewSet(CityViewSet):
+    """ City Of Country View Set """
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ GET QUERYSET
@@ -131,7 +135,35 @@ class CityOfCountryViewSet(CityViewSet):
         country = get_object_or_404(Country.objects.all(), pk=country_pk)
 
         # Get queryset
-        queryset = City.objects.filter(country=country)
+        queryset = super().get_queryset().filter(country=country)
+
+        # Return queryset
+        return queryset
+
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ COUNTRY OF CURRENCY VIEW SET
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+
+class CountryOfCurrencyViewSet(CountryViewSet):
+    """ Country Of Currency View Set """
+
+    # ┌─────────────────────────────────────────────────────────────────────────────────
+    # │ GET QUERYSET
+    # └─────────────────────────────────────────────────────────────────────────────────
+
+    def get_queryset(self):
+        """ Returns a queryset of countries filtered by a given currency """
+
+        # Get currency primary key
+        currency_pk = self.kwargs.get("currency_pk")
+
+        # Get currency
+        currency = get_object_or_404(Currency.objects.all(), pk=currency_pk)
+
+        # Get queryset
+        queryset = super().get_queryset().filter(currency=currency)
 
         # Return queryset
         return queryset

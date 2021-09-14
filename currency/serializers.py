@@ -1,80 +1,62 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DJANGO IMPORTS
+# │ DJANGO REST IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from django.db.models import Q
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DJANGO REST FRAMEWORK IMPORTS
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
+from dynamic_rest.fields import DynamicRelationField
+from dynamic_rest.serializers import DynamicModelSerializer
+from rest_framework import serializers
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 from currency.models import Currency
-from currency.serializers import CurrencySerializer
-from utils.pagination import DynamicPagination
-from utils.viewsets import DynamicReadOnlyModelViewSet
+from location.serializers import CountrySerializer
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ CURRENCY VIEW SET
+# │ CURRENCY SERIALIZER
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 
-class CurrencyViewSet(DynamicReadOnlyModelViewSet):
-    """ Currency View Set """
+class CurrencySerializer(DynamicModelSerializer):
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Define model
-    model = Currency
+    # Define country foreign key
+    country = DynamicRelationField(CountrySerializer)
 
-    # Define serializer class
-    serializer_class = CurrencySerializer
-
-    # Define pagination class
-    pagination_class = DynamicPagination
-
-    # Define permission classes
-    permission_classes = [AllowAny]
-
-    # Define search fields
-    search_fields = ["name", "code", "number", "country__name"]
-
-    # Define queryset
-    queryset = Currency.objects.all().select_related("country").order_by("name")
+    # Ensure that flag falls back to country flag
+    flag = serializers.ImageField(source="flag_or_country_flag")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
-    # │ RETRIEVE
+    # │ META
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    def retrieve(self, request, pk=None):
-        """ Custom Retrieve Method """
+    class Meta:
+        """ Meta Class """
 
-        # Check if pk is alpha string
-        if pk and pk.isalpha():
+        # ┌─────────────────────────────────────────────────────────────────────────────
+        # │ MODEL
+        # └─────────────────────────────────────────────────────────────────────────────
 
-            # Uppercase pk
-            pk = pk.upper()
+        model = Currency
+        name = "currency"
 
-            # Get currency whose code matches pk
-            currency = self.get_queryset().filter(Q(code=pk) | Q(code=pk)).first()
+        # ┌─────────────────────────────────────────────────────────────────────────────
+        # │ FIELDS
+        # └─────────────────────────────────────────────────────────────────────────────
 
-            # Check if currency exists
-            if currency:
-
-                # Get currency serializer
-                serializer = self.get_serializer(currency)
-
-                # Return serialized data
-                return Response(serializer.data)
-
-        # Return parent method
-        return super().retrieve(request, pk=pk)
+        fields = (
+            "id",
+            "country",
+            "name",
+            "name_plural",
+            "code",
+            "number",
+            "symbol",
+            "symbol_native",
+            "flag",
+        )

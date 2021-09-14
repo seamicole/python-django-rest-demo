@@ -61,6 +61,9 @@ def populate_locations(apps, schema_editor):
     def initialize_country(country):
         """ Returns a Country object from a country dict """
 
+        # Add capital name to capital names by ISO3
+        capital_names_by_iso3[country["iso3"]] = country.pop("capital_name")
+
         # Get is UN member at value
         is_un_member_at = country["is_un_member_at"]
 
@@ -68,9 +71,6 @@ def populate_locations(apps, schema_editor):
         country["is_un_member_at"] = is_un_member_at and make_aware(
             datetime.strptime(is_un_member_at, "%Y-%m-%d")
         )
-
-        # Add capital name to capital names by ISO3
-        capital_names_by_iso3[country["iso3"]] = country.pop("capital_name")
 
         # Get lowercase country ISO2
         iso2_lower = country["iso2"].lower().strip()

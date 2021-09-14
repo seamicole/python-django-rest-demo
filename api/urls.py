@@ -9,7 +9,13 @@ from rest_framework_nested.routers import NestedDefaultRouter
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from location.views import CityOfCountryViewSet, CityViewSet, CountryViewSet
+from currency.views import CurrencyViewSet
+from location.views import (
+    CityOfCountryViewSet,
+    CityViewSet,
+    CountryOfCurrencyViewSet,
+    CountryViewSet,
+)
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -18,6 +24,21 @@ from location.views import CityOfCountryViewSet, CityViewSet, CountryViewSet
 
 # api_root (/)
 router = DynamicRouter()
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CURRENCY
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+# currencies/
+router.register("currencies", CurrencyViewSet, base_name="currencies")
+
+# Define currencies router
+currencies_router = NestedDefaultRouter(router, "currencies", lookup="currency")
+
+# currencies/:id/countries/(:id)
+currencies_router.register(
+    "countries", CountryOfCurrencyViewSet, basename="countries-of-currency"
+)
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ LOCATION
@@ -48,6 +69,7 @@ router_urls = [
     router.urls,
     # Nested router urls
     countries_router.urls,
+    currencies_router.urls,
 ]
 
 # Concatenate all lists

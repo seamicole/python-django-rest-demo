@@ -10,7 +10,7 @@ import os
 # │ DJANGO IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from django.db import migrations
+from django.db import migrations, transaction
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ PROJECT IMPORTS
@@ -61,9 +61,18 @@ def populate_currencies(apps, schema_editor):
     # Get Currency model
     Currency = apps.get_model("currency", "Currency")
 
+    # Initialize mapping of country ISO3s by currency code
+    iso3s_by_currency_code = {}
+
     # Define initialize currency helper
     def initialize_currency(currency):
         """ Returns a Currency object from a currency dict """
+
+        # Get currency code
+        currency_code = currency["code"]
+
+        # Add country ISO3s to ISO3s by currency code
+        iso3s_by_currency_code[currency_code] = currency.pop("iso3s")
 
         # Get country primary key
         country_pk = country_pks_by_iso3.get(currency.pop("iso3"), None)
@@ -72,7 +81,7 @@ def populate_currencies(apps, schema_editor):
         currency["country_id"] = country_pk
 
         # Check if currency is Euro (need European Union flag)
-        if currency["code"] == "EUR":
+        if currency_code == "EUR":
 
             # Add flag path to currency
             currency["flag"] = "location/country/flag/eu.png"
@@ -91,6 +100,28 @@ def populate_currencies(apps, schema_editor):
         [initialize_currency(currency) for currency in currencies]
     )
 
+    # Create a mapping of currency primary keys by currency code
+    currency_pks_by_code = {currency.code: currency.pk for currency in currencies}
+
+    # Create a mapping of country ISO3s by currency primary key
+    iso3s_by_currency_pk = {
+        currency_pks_by_code[code]: iso3s
+        for code, iso3s in iso3s_by_currency_code.items()
+    }
+
+    # ┌─────────────────────────────────────────────────────────────────────────────────
+    # │ COUNTRY CURRENCIES
+    # └─────────────────────────────────────────────────────────────────────────────────
+
+    # Initialize atomic transaction block to reduce overhead
+    with transaction.atomic():
+
+        # Iterate over currencies
+        for currency_pk, iso3s in iso3s_by_currency_pk.items():
+
+            # Update all countries that use this currency
+            Country.objects.filter(iso3__in=iso3s).update(currency_id=currency_pk)
+
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ MIGRATION
@@ -106,6 +137,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("currency", "0001_initial"),
+        ("location", "0003_country_currency"),
     ]
 
     operations = [
