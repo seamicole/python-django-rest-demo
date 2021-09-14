@@ -1,4 +1,10 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ DJANGO REST FRAMEWORK IMPORTS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+from rest_framework.permissions import AllowAny
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
@@ -28,6 +34,9 @@ class CityViewSet(DynamicReadOnlyModelViewSet):
     # Define pagination class
     pagination_class = DynamicPagination
 
+    # Define permission classes
+    permission_classes = [AllowAny]
+
     # Define search fields
     search_fields = ["name"]
 
@@ -54,6 +63,9 @@ class CountryViewSet(DynamicReadOnlyModelViewSet):
 
     # Define pagination class
     pagination_class = DynamicPagination
+
+    # Define permission classes
+    permission_classes = [AllowAny]
 
     # Define search fields
     search_fields = ["name", "name_native"]
