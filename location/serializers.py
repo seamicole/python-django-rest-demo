@@ -87,7 +87,6 @@ class CountrySerializer(DynamicModelSerializer):
             "population",
             "latitude",
             "longitude",
-            # "coordinates",
             "is_un_member",
             "is_un_member_at",
             "flag",

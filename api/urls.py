@@ -1,9 +1,3 @@
-# ┌────────────────────────────────────────────────────────────────────────────────────┐
-# │ DJANGO IMPORTS                                                                     │
-# └────────────────────────────────────────────────────────────────────────────────────┘
-
-from django.urls import path
-
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DJANGO REST FRAMEWORK IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
@@ -15,7 +9,7 @@ from rest_framework_nested.routers import NestedDefaultRouter
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from location.views import CityViewSet, CountryViewSet
+from location.views import CityOfCountryViewSet, CityViewSet, CountryViewSet
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -39,11 +33,7 @@ router.register("countries", CountryViewSet, base_name="countries")
 countries_router = NestedDefaultRouter(router, "countries", lookup="country")
 
 # countries/:id/cities/(:id)
-# countries_router.register(
-#    "cities",
-#    TransactionOfAccountReadOnlyViewSet,
-#    basename="transactions-of-account",
-# )
+countries_router.register("cities", CityOfCountryViewSet, basename="cities-of-country")
 
 # ┌────────────────────────────────────────────────────────────────────────────────────┐
 # │ URL PATTERNS                                                                       │

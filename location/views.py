@@ -2,6 +2,7 @@
 # │ DJANGO REST FRAMEWORK IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
+from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import AllowAny
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -72,3 +73,30 @@ class CountryViewSet(DynamicReadOnlyModelViewSet):
 
     # Define queryset
     queryset = Country.objects.all().prefetch_related("cities").order_by("name")
+
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CITY OF COUNTRY VIEW SET
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+
+class CityOfCountryViewSet(CityViewSet):
+
+    # ┌─────────────────────────────────────────────────────────────────────────────────
+    # │ GET QUERYSET
+    # └─────────────────────────────────────────────────────────────────────────────────
+
+    def get_queryset(self):
+        """ Returns a queryset of cities filtered by a given country """
+
+        # Get country primary key
+        country_pk = self.kwargs.get("country_pk")
+
+        # Get country
+        country = get_object_or_404(Country.objects.all(), pk=country_pk)
+
+        # Get queryset
+        queryset = City.objects.filter(country=country)
+
+        # Return queryset
+        return queryset
