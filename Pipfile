@@ -14,6 +14,7 @@ django-heroku = "*"
 django-storages = "*"
 djangorestframework = "*"
 drf-nested-routers = "*"
+dynamic-rest = {git = "https://github.com/altschool/dynamic-rest/"}
 gunicorn = "*"
 pillow = "*"
 psycopg2-binary = "*"
@@ -24,9 +25,8 @@ unidecode = "*"
 
 [dev-packages]
 flake8 = "*"
+pyparsing = "*"
+pydot = "*"
 
 [requires]
 python_version = "3.8"
-
-[packages.dynamic-rest]
-git = "https://github.com/altschool/dynamic-rest/"
