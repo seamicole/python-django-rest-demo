@@ -1,50 +1,29 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DJANGO IMPORTS
+# │ GENERAL IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from django.contrib import admin
+import os
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ PROJECT IMPORTS
+# │ CELERY IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from currency.models import Currency
-
+from celery import Celery
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ CURRENCY ADMIN
+# │ DJANGO ENVIRONMENT
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-
-class CurrencyAdmin(admin.ModelAdmin):
-    """ Currency Admin """
-
-    # ┌─────────────────────────────────────────────────────────────────────────────────
-    # │ CLASS ATTRIBUTES
-    # └─────────────────────────────────────────────────────────────────────────────────
-
-    # Define list display
-    list_display = [
-        "id",
-        "name",
-        "code",
-        "number",
-        "symbol",
-        "symbol_native",
-        "in_usd",
-        "per_usd",
-        "rates_updated_at",
-    ]
-
-    # Define list display links
-    list_display_links = ["id", "name"]
-
-    # Define search fields
-    search_fields = ["name", "code", "number", "country__name"]
-
+# Configure Django environment
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ REGISTER
+# │ CELERY APP
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-admin.site.register(Currency, CurrencyAdmin)
+# Initialize Celery app
+app = Celery("drf-demo")
+app.config_from_object("django.conf:settings")
+
+# Load tasks from all registered apps
+app.autodiscover_tasks()

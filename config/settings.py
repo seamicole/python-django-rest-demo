@@ -9,6 +9,12 @@ import os
 from decouple import config
 from pathlib import Path
 
+# ┌─────────────────────────────────────────────────────────────────────────────────────
+# │ CELERY IMPORTS
+# └─────────────────────────────────────────────────────────────────────────────────────
+
+from celery.schedules import crontab
+
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ CORE
@@ -350,10 +356,21 @@ BROKER_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 # Define Celery result backend
-result_backend = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
 
-# Set Celery settings
-task_always_eager = config("TASK_ALWAYS_EAGER", cast=bool, default=False)
+# Set Celery always eager setting
+CELERY_ALWAYS_EAGER = config("CELERY_ALWAYS_EAGER", cast=bool, default=False)
+
+# Define Celery Beat schedule
+CELERY_BEAT_SCHEDULE = {
+    "fetch-exchange-rates-every-hour": {
+        "task": "fetch-exchange-rates",
+        "schedule": crontab(minute=0, hour="*"),
+    },
+}
+
+# Define Celery timezone
+CELERY_TIMEZONE = "UTC"
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ HEROKU
