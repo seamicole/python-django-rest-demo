@@ -1,65 +1,13 @@
-# drf-demo
-A Django REST Framework demo API
+# DRF Demo
 
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
-This is some text
+DRF Demo is a Django REST Framework demo API
 
 <img align="right" src="./documentation/images/drf-demo-schema.png" alt="screenshot runserver in browser">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida enim id tellus placerat, vel accumsan turpis sagittis. Ut condimentum, justo pellentesque blandit cursus, mauris enim euismod ipsum, cursus condimentum sapien mauris et ex. Sed porttitor ac est vitae pharetra. Vestibulum scelerisque eget erat eget rutrum. Praesent et tristique tellus, a tempor massa. Donec vitae quam elementum, viverra eros eget, tempus ipsum. Ut neque augue, consequat vitae vehicula sit amet, facilisis sit amet risus. Vivamus ipsum dolor, consectetur vitae arcu ut, tempor malesuada nunc. Mauris non urna ullamcorper, ornare erat et, blandit ex. Curabitur eleifend metus id porta gravida. Duis porta sed nulla nec hendrerit. Nullam tempor magna nec luctus scelerisque. Quisque et arcu ut nulla facilisis ultricies eget vitae ex. Donec et quam vitae ante dictum gravida at eu dolor. Nam rutrum velit urna, id ornare erat faucibus eu.
+
+Pellentesque vestibulum iaculis nisl. In accumsan leo nec dolor accumsan, nec rhoncus ipsum mattis. Maecenas ornare maximus orci, nec fringilla ante dictum non. Fusce volutpat justo ac nisi volutpat, tempus faucibus mi fringilla. Phasellus tempus vestibulum ante, at vehicula risus tristique ac. Curabitur gravida tellus ac dignissim elementum. Nam suscipit congue pellentesque. Sed nisi nisi, malesuada quis tempor at, iaculis nec ex. Proin ac dolor eget ipsum mollis feugiat. Maecenas eu pretium lacus, ac consequat ligula. Etiam vestibulum purus ut diam pellentesque gravida. Maecenas pulvinar convallis ex, pellentesque vestibulum lorem mollis rutrum. Duis quis efficitur augue. Vivamus congue nunc non dignissim pretium. Duis sit amet elementum tortor.
+
+Nulla eget lobortis ipsum, non interdum neque. Sed varius elementum purus, sit amet luctus augue venenatis in. In ut maximus dolor. Donec nec dui non sem iaculis fringilla. Nam lacinia augue risus, et rhoncus est malesuada quis. Vestibulum non tristique dui. Vivamus ac nisl neque. Morbi ipsum felis, consequat sit amet dignissim in, dictum nec purus. Vivamus molestie euismod ligula vel viverra. In at pulvinar dui, nec cursus ligula. Ut scelerisque ante quis porta facilisis.
+
+Nullam id tortor nulla. Aenean id aliquam massa. Ut dui magna, vehicula ac convallis at, maximus nec leo. Praesent leo mi, semper et venenatis ut, tristique eu mi. Sed sed rhoncus sapien. Pellentesque bibendum quam ut ante feugiat, sed blandit lorem volutpat. Fusce cursus mattis tellus, sit amet placerat lacus porttitor vel. Vestibulum eu tellus velit. Sed varius vitae risus a faucibus. Sed congue vel elit vel consectetur.
