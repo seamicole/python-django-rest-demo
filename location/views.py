@@ -1,24 +1,18 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DJANGO IMPORTS
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-from django.db.models import Q
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DJANGO REST FRAMEWORK IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
-from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ PROJECT IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 from currency.models import Currency
+from currency.tools import get_currency_by_lookup_or_404
 from location.models import City, Country
 from location.serializers import CitySerializer, CountrySerializer
+from location.tools import get_country_by_lookup_or_404
 from utils.pagination import DynamicPagination
 from utils.viewsets import DynamicReadOnlyModelViewSet
 
@@ -85,32 +79,31 @@ class CountryViewSet(DynamicReadOnlyModelViewSet):
     queryset = Country.objects.all().prefetch_related("cities").order_by("name")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
-    # │ RETRIEVE
+    # │ GET OBJECT
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    def retrieve(self, request, pk=None):
-        """ Custom Retrieve Method """
+    def get_object(self):
+        """ Returns a Country instance by ISO code or primary key """
 
-        # Check if pk is alpha string
-        if pk and pk.isalpha():
+        # Get queryset
+        queryset = self.filter_queryset(self.get_queryset())
 
-            # Uppercase pk value
-            pk = pk.upper()
+        # Get lookup URL kwarg
+        lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
 
-            # Get country whose ISO code matches pk
-            country = self.get_queryset().filter(Q(iso2=pk) | Q(iso3=pk)).first()
+        # Get lookup
+        lookup = self.kwargs[lookup_url_kwarg]
 
-            # Check if country exists
-            if country:
+        # Get Country object by lookup or 404
+        obj = get_country_by_lookup_or_404(
+            queryset=queryset, lookup_field=self.lookup_field, lookup=lookup
+        )
 
-                # Get country serializer
-                serializer = self.get_serializer(country)
+        # Chec object permissions
+        self.check_object_permissions(self.request, obj)
 
-                # Return serialized data
-                return Response(serializer.data)
-
-        # Return parent method
-        return super().retrieve(request, pk=pk)
+        # Return object
+        return obj
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -131,8 +124,10 @@ class CityOfCountryViewSet(CityViewSet):
         # Get country primary key
         country_pk = self.kwargs.get("country_pk")
 
-        # Get country
-        country = get_object_or_404(Country.objects.all(), pk=country_pk)
+        # Get Country object by lookup or 404
+        country = get_country_by_lookup_or_404(
+            queryset=Country.objects.all(), lookup=country_pk
+        )
 
         # Get queryset
         queryset = super().get_queryset().filter(country=country)
@@ -159,8 +154,10 @@ class CountryOfCurrencyViewSet(CountryViewSet):
         # Get currency primary key
         currency_pk = self.kwargs.get("currency_pk")
 
-        # Get currency
-        currency = get_object_or_404(Currency.objects.all(), pk=currency_pk)
+        # Get currency object by lookup or 404
+        currency = get_currency_by_lookup_or_404(
+            queryset=Currency.objects.all(), lookup=currency_pk
+        )
 
         # Get queryset
         queryset = super().get_queryset().filter(currency=currency)

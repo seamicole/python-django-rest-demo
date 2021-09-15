@@ -1,15 +1,8 @@
 # ┌─────────────────────────────────────────────────────────────────────────────────────
-# │ DJANGO IMPORTS
-# └─────────────────────────────────────────────────────────────────────────────────────
-
-from django.db.models import Q
-
-# ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ DJANGO REST FRAMEWORK IMPORTS
 # └─────────────────────────────────────────────────────────────────────────────────────
 
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
 # │ PROJECT IMPORTS
@@ -17,6 +10,7 @@ from rest_framework.response import Response
 
 from currency.models import Currency
 from currency.serializers import CurrencySerializer
+from currency.tools import get_currency_by_lookup_or_404
 from utils.pagination import DynamicPagination
 from utils.viewsets import DynamicReadOnlyModelViewSet
 
@@ -52,29 +46,28 @@ class CurrencyViewSet(DynamicReadOnlyModelViewSet):
     queryset = Currency.objects.all().select_related("country").order_by("name")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
-    # │ RETRIEVE
+    # │ GET OBJECT
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    def retrieve(self, request, pk=None):
-        """ Custom Retrieve Method """
+    def get_object(self):
+        """ Returns a Currency instance by currency code or primary key """
 
-        # Check if pk is alpha string
-        if pk and pk.isalpha():
+        # Get queryset
+        queryset = self.filter_queryset(self.get_queryset())
 
-            # Uppercase pk
-            pk = pk.upper()
+        # Get lookup URL kwarg
+        lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
 
-            # Get currency whose code matches pk
-            currency = self.get_queryset().filter(Q(code=pk) | Q(code=pk)).first()
+        # Get lookup
+        lookup = self.kwargs[lookup_url_kwarg]
 
-            # Check if currency exists
-            if currency:
+        # Get Currency object by lookup or 404
+        obj = get_currency_by_lookup_or_404(
+            queryset=queryset, lookup_field=self.lookup_field, lookup=lookup
+        )
 
-                # Get currency serializer
-                serializer = self.get_serializer(currency)
+        # Chec object permissions
+        self.check_object_permissions(self.request, obj)
 
-                # Return serialized data
-                return Response(serializer.data)
-
-        # Return parent method
-        return super().retrieve(request, pk=pk)
+        # Return object
+        return obj
