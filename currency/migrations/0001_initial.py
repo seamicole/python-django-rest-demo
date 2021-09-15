@@ -34,6 +34,18 @@ class Migration(migrations.Migration):
                 ),
                 ("symbol", models.CharField(max_length=10)),
                 ("symbol_native", models.CharField(max_length=20)),
+                (
+                    "in_usd",
+                    models.DecimalField(
+                        blank=True, decimal_places=15, max_digits=30, null=True
+                    ),
+                ),
+                (
+                    "per_usd",
+                    models.DecimalField(
+                        blank=True, decimal_places=15, max_digits=30, null=True
+                    ),
+                ),
                 ("flag", models.ImageField(upload_to="currency/currency/flag")),
                 (
                     "country",

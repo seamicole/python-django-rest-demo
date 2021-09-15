@@ -47,6 +47,17 @@ class Currency(models.Model):
     symbol_native = models.CharField(max_length=20)
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
+    # │ EXCHANGE_RATES
+    # └─────────────────────────────────────────────────────────────────────────────────
+
+    in_usd = models.DecimalField(
+        max_digits=30, decimal_places=15, blank=True, null=True
+    )
+    per_usd = models.DecimalField(
+        max_digits=30, decimal_places=15, blank=True, null=True
+    )
+
+    # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ FLAG
     # └─────────────────────────────────────────────────────────────────────────────────
 
