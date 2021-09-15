@@ -363,7 +363,7 @@ CELERY_ALWAYS_EAGER = config("CELERY_ALWAYS_EAGER", cast=bool, default=False)
 
 # Define Celery Beat schedule
 CELERY_BEAT_SCHEDULE = {
-    "fetch-exchange-rates-every-hour": {
+    "fetch-exchange-rates-every-two-hours": {
         "task": "fetch-exchange-rates",
         "schedule": crontab(minute=0, hour="*/2"),
     },
