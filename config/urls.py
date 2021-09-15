@@ -26,7 +26,7 @@ if settings.ENABLE_DJANGO_ADMIN:
     environment_reminder = settings.ENVIRONMENT.title()
 
     # Define title from environment reminder
-    TITLE = f"DRF Showcase {environment_reminder}"
+    TITLE = f"DRF Demo {environment_reminder}"
 
     # Set title for Django Admin
     admin.site.site_title = TITLE
