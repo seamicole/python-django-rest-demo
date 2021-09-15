@@ -58,5 +58,8 @@ class CurrencySerializer(DynamicModelSerializer):
             "number",
             "symbol",
             "symbol_native",
+            "in_usd",
+            "per_usd",
+            "rates_updated_at",
             "flag",
         )

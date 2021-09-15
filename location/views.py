@@ -45,7 +45,7 @@ class CityViewSet(DynamicReadOnlyModelViewSet):
     search_fields = ["name"]
 
     # Define queryset
-    queryset = City.objects.all().select_related("country").order_by("name")
+    queryset = City.objects.all().order_by("name")
 
 
 # ┌─────────────────────────────────────────────────────────────────────────────────────
@@ -76,7 +76,7 @@ class CountryViewSet(DynamicReadOnlyModelViewSet):
     search_fields = ["name", "name_native"]
 
     # Define queryset
-    queryset = Country.objects.all().prefetch_related("cities").order_by("name")
+    queryset = Country.objects.all().order_by("name")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ GET OBJECT

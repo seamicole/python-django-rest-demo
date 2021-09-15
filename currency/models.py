@@ -56,6 +56,7 @@ class Currency(models.Model):
     per_usd = models.DecimalField(
         max_digits=30, decimal_places=15, blank=True, null=True
     )
+    rates_updated_at = models.DateTimeField(blank=True, null=True)
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ FLAG

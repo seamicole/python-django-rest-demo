@@ -46,6 +46,7 @@ class Migration(migrations.Migration):
                         blank=True, decimal_places=15, max_digits=30, null=True
                     ),
                 ),
+                ("rates_updated_at", models.DateTimeField(blank=True, null=True)),
                 ("flag", models.ImageField(upload_to="currency/currency/flag")),
                 (
                     "country",

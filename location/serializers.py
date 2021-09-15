@@ -57,7 +57,8 @@ class CountrySerializer(DynamicModelSerializer):
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    capital = DynamicRelationField(CitySerializer)
+    capital = DynamicRelationField("CitySerializer")
+    currency = DynamicRelationField("currency.serializers.CurrencySerializer")
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ META
@@ -80,6 +81,7 @@ class CountrySerializer(DynamicModelSerializer):
         fields = (
             "id",
             "capital",
+            "currency",
             "name",
             "name_native",
             "iso2",
