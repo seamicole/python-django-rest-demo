@@ -25,8 +25,11 @@ class CurrencySerializer(DynamicModelSerializer):
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    # Define country foreign key
+    # Define upward foreign key fields
     country = DynamicRelationField(CountrySerializer)
+
+    # Define downward foreign key fields
+    countries = DynamicRelationField(CountrySerializer, many=True, deferred=True)
 
     # Ensure that flag falls back to country flag
     flag = serializers.ImageField(source="flag_or_country_flag")
@@ -62,4 +65,5 @@ class CurrencySerializer(DynamicModelSerializer):
             "per_usd",
             "rates_updated_at",
             "flag",
+            "countries",
         )

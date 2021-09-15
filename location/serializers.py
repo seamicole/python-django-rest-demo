@@ -57,8 +57,12 @@ class CountrySerializer(DynamicModelSerializer):
     # │ CLASS ATTRIBUTES
     # └─────────────────────────────────────────────────────────────────────────────────
 
+    # Define upward foreign key fields
     capital = DynamicRelationField("CitySerializer")
     currency = DynamicRelationField("currency.serializers.CurrencySerializer")
+
+    # Define downward foreign key fields
+    cities = DynamicRelationField("CitySerializer", many=True, deferred=True)
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ META
@@ -92,4 +96,5 @@ class CountrySerializer(DynamicModelSerializer):
             "is_un_member",
             "is_un_member_at",
             "flag",
+            "cities",
         )
