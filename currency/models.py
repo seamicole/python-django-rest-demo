@@ -62,7 +62,7 @@ class Currency(models.Model):
     # │ FLAG
     # └─────────────────────────────────────────────────────────────────────────────────
 
-    flag = models.ImageField(upload_to="currency/currency/flag")
+    flag = models.ImageField(upload_to="currency/currency/flag", blank=True, null=True)
 
     # ┌─────────────────────────────────────────────────────────────────────────────────
     # │ __STR__

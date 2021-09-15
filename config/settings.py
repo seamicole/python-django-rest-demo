@@ -365,7 +365,7 @@ CELERY_ALWAYS_EAGER = config("CELERY_ALWAYS_EAGER", cast=bool, default=False)
 CELERY_BEAT_SCHEDULE = {
     "fetch-exchange-rates-every-hour": {
         "task": "fetch-exchange-rates",
-        "schedule": crontab(minute=0, hour="*"),
+        "schedule": crontab(minute=0, hour="*/2"),
     },
 }
 
