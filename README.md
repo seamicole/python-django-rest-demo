@@ -58,9 +58,8 @@ The country endpoint accepts ID, ISO2, and ISO3 lookups; the following return th
 
 The currency endpoint accepts ID and currency code lookups; the following return the same response:
 
-- [api / currencies / 106 /](https://drf-demo-backend-production.herokuapp.com/api/countries/106)
-- [api / currencies / USD /](https://drf-demo-backend-production.herokuapp.com/api/countries/106)
-
+- [api / currencies / 106 /](https://drf-demo-backend-production.herokuapp.com/api/currencies/106)
+- [api / currencies / USD /](https://drf-demo-backend-production.herokuapp.com/api/currencies/USD)
 
 ### Sideloading
 
