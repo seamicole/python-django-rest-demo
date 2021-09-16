@@ -63,7 +63,49 @@ The currency endpoint accepts ID and currency code lookups; the following return
 
 ### Sideloading
 
+This project utilizes sideloading as opposed to nested serializers to present related data for the following reasons:
+
+- Retains a flatter data structure more closely representing that of a row in an SQL database
+
+- Reduces data duplication in cases where many objects share a relation thus reducing overall payload; a nested serializer will repeat data for every shared relation while a sideloaded relation need only appear once
+
+- Allows the client to choose which sideloaded relations to fetch, if any, without affecting the underlying data structure of the default response
+
+The following request will fetch all available cities and sideload their country foreign key relation:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/cities/?include[]=country.*">api / cities / ? include[] = country.*</a>
+
+The following request will fetch all available countries and sideload their capital and currency foreign key relations:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?include[]=capital.*&include[]=currency.*">api / countries / ? include[] = capital.* & include[] = currency.*</a>
+
+The following request will fetch all available currencies and sideload their country foreign key relation:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/currencies/?include[]=country.*">api / currencies / ? include[] = country.*</a>
+
 ### Searching
+
+Each endpoint in this project offers a general search or "autocomplete" feature that will perform a case-insensitive string search across one or multiple pre-defined fields.
+
+In the case of the city endpoint, search will return results matching `City.name`:
+
+- [api / cities / ? search = ous](https://drf-demo-backend-production.herokuapp.com/api/cities/?search=ous)
+
+The country endpoint search will return results matching `Country.name` and `Country.name_native`:
+
+- [api / cities / ? search = kor](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=kor)
+- [api / cities / ? search = 한](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=한)
+
+Finally, the currency endpoint search will return results matching `Currency.name`, `Currency.code`, `Currency.number`, and `Currency.country.name`:
+
+- [api / currencies / ? search = dollar](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=dollar)
+- [api / currencies / ? search = sd](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=sd)
+- [api / currencies / ? search = 40](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=40)
+- [api / currencies / ? search = united](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=united)
+
+
+
+
 
 ### Sorting
 
