@@ -30,11 +30,37 @@ The codebase associated with this project provides a comprehensive implementatio
 
 ## Live Demo
 
-The live demo of this project is hosted on a Heroku free tier pipeline. Please note that
-
-For convenience, the Browsable API feature has been enabled so that you can easily navigate the API within your browser.
+The [live demo](https://drf-demo-backend-production.herokuapp.com/api/) of this project is hosted on a Heroku free tier pipeline and may take up to 30 seconds to wake up.
 
 ### Endpoints
+
+For convenience, the Django REST Framework browsable API feature has been enabled so that you can easily navigate through the following publicly available endpoints:
+
+<div align="center">
+
+| Endpoint                                                                                                                       | Description                               |
+| ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| [api / cities /](https://drf-demo-backend-production.herokuapp.com/api/cities)                                                 | All 2,174 cities in database              |
+| [api / countries /](https://drf-demo-backend-production.herokuapp.com/api/countries)                                           | All 250 countries in database             |
+| [api / countries / :id / cities / (:id) /](https://drf-demo-backend-production.herokuapp.com/api/countries/237/cities)         | All cities that belong to a given country |
+| [api / currencies /](https://drf-demo-backend-production.herokuapp.com/api/currencies)                                         | All 114 currencies in database            |
+| [api / currencies / :id / countries / (:id) /](https://drf-demo-backend-production.herokuapp.com/api/currencies/106/countries) | All countries that use a given currency   |
+
+</div>
+
+Note that the country and currency endpoints accept ID lookups as well as field lookups.
+
+The country endpoint accepts ID, ISO2, and ISO3 lookups; the following return the same response:
+
+- [api / countries / 237 /](https://drf-demo-backend-production.herokuapp.com/api/countries/237)
+- [api / countries / US /](https://drf-demo-backend-production.herokuapp.com/api/countries/US)
+- [api / countries / USA /](https://drf-demo-backend-production.herokuapp.com/api/countries/USA)
+
+The currency endpoint accepts ID and currency code lookups; the following return the same response:
+
+- [api / currencies / 106 /](https://drf-demo-backend-production.herokuapp.com/api/countries/106)
+- [api / currencies / USD /](https://drf-demo-backend-production.herokuapp.com/api/countries/106)
+
 
 ### Sideloading
 
@@ -63,6 +89,8 @@ $ cd drf-demo
 
 ### Environment
 
+Rename `.env.example` to `.env` so that your environment variables are read into the Django settings module.
+
 If you don't already have `Pipenv` installed in your machine, install it now:
 
 ```console
@@ -80,9 +108,8 @@ Install project dependencies:
 ```console
 $ pipenv install
 ```
-Rename `.env.example` to `.env` so that your environment variables are read into the Django settings module.
 
-In this case, you'll have `USE_LOCAL_STORAGE` set to `True` so be sure to collect your static files locally:
+Assuming you have `USE_LOCAL_STORAGE` set to `True` in your `.env`, be sure to collect your static files locally:
 
 ```console
 $ python manage.py collectstatic
