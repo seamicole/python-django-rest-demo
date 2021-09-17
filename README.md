@@ -125,11 +125,17 @@ The following request will sort all available countries by descending capital po
 
 **Note** that results with null values appear at the end of ascending lists by default, which means they appear at the beginning of the above results list. Refer to the [Filtering](#filtering) section for an example of how to omit them altogether.
 
+You may also combine multiple fields into a single sort operation with an ampersand.
+
+The following request will sort all available countries by United Nations member status and then by name:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-is_un_member&sort[]=name">api / countries / ? sort[] = -is_un_member & sort[] = name</a>
+
 ### Filtering
 
 Each endpoint in this project supports filtering results by one or more field values.
 
-Once again, dot notation can be used to apply a filter operation accross database relations.
+Once again, dot notation can be used to apply a filter operation accross database relations, and ampersands may be used to combine multiple filter operations into a single request.
 
 #### Exact
 
