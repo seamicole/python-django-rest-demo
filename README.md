@@ -110,7 +110,6 @@ Each endpoint in this project supports sorting results by one or more fields, an
 The following requests will sort all available countries by name, ascending and descending respectively:
 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=name">api / countries / ? sort[] = name</a>
-
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-name">api / countries / ? sort[] = -name</a>
 
 The following request will sort all available countries by United Nations member status, date of admission to the United Nations, and country name, respectively -- or more simply: by ascending date of membership:
@@ -157,7 +156,7 @@ Note also that the `iexact` modifier can be added to string queries to make them
 
 #### In
 
-The `in` filter will match results based on whether their exact value is one of a list of values.
+The `in` filter will match results based on whether the exact value of a given field is one of a list of values.
 
 The following request will return a list of countries consisting of the United States and Australia:
 
@@ -167,12 +166,33 @@ The following request will return a list of countries that use either the US Dol
 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{currency.code.in}=USD&filter{currency.code.in}=AUD">api / countries / ? filter{currency.code.in} = USD & filter{currency.code.in} = AUD</a>
 
-
-#### Regex
-
 #### Contains
 
+The `contains` filter will match results based on whether the value of a given string field contains a substring.
+
+The following request will return a list of countries whose name contains "den", i.e. Sweden:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.contains}=den">api / countries / ? filter{name.contains} = den</a>
+
+Note that an `i` modifier can be prefixed to this filter to make it case insensitive.
+
+The following request will do the same without regard to case, i.e. Denmark and Sweden:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.icontains}=den">api / countries / ? filter{name.icontains} = den</a>
+
 #### Startswith and Endswith
+
+The `startswith` and `endswith` filters match results based on whether the value of a given string field either starts or ends with a specified substring. Again, the `i` operator can be applied to make them case-insenstive.
+
+The following requests will return a list of countries whose name starts with "United":
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.startswith}=United">api / countries / ? filter{name.startswith} = United</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.istartswith}=united">api / countries / ? filter{name.istartswith} = united</a>
+
+The following requests will return a list of countries whose name ends with the suffix "-ia":
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.endswith}=ia">api / countries / ? filter{name.endswith} = ia</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.iendswith}=IA">api / countries / ? filter{name.iendswith} = IA</a>
 
 #### Greater Than and Less Than
 
@@ -189,6 +209,10 @@ The following request will return a list of countries whose capitals have a non-
 #### Inversions
 
 The results of any of the above filter operations can also be inverted in a similar way a reverse sort works.
+
+The following request returns a list of countries whose names DO NOT start with the word "United":
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{-name.startswith}=United">api / countries / ? filter{-name.startswith} = United</a>
 
 The following request returns a list of countries that DO NOT use the US Dollar as their primary currency:
 
