@@ -112,6 +112,11 @@ The following requests will sort all available countries by name, ascending and 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=name">api / countries / ? sort[] = name</a>
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-name">api / countries / ? sort[] = -name</a>
 
+The following requests will sort all available countries by population, ascending and descending respectively:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=population">api / countries / ? sort[] = population</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-population">api / countries / ? sort[] = -population</a>
+
 The following request will sort all available countries by United Nations member status, date of admission to the United Nations, and country name, respectively -- or more simply: by ascending date of membership:
 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?sort[]=-is_un_member&sort[]=is_un_member_at&sort[]=name">api / countries / ? sort[] = -is_un_member & sort[] = is_un_member_at & sort[] = name</a>
@@ -122,7 +127,7 @@ The following request will sort all available countries by descending capital po
 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?sort[]=-capital.population">api / countries / ? sort[] = -capital.population</a>
 
-Note that results with null values appear at the end of ascending lists by default, which means they appear at the beginning of the above results list. Refer to the [Filtering](#filtering) section for an example of how to omit them altogether.
+**Note** that results with null values appear at the end of ascending lists by default, which means they appear at the beginning of the above results list. Refer to the [Filtering](#filtering) section for an example of how to omit them altogether.
 
 ### Filtering
 
