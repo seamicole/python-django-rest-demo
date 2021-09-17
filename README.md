@@ -117,10 +117,6 @@ The following requests will sort all available countries by population, ascendin
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=population">api / countries / ? sort[] = population</a>
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-population">api / countries / ? sort[] = -population</a>
 
-The following request will sort all available countries by United Nations member status, date of admission to the United Nations, and country name, respectively -- or more simply: by ascending date of membership:
-
-- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?sort[]=-is_un_member&sort[]=is_un_member_at&sort[]=name">api / countries / ? sort[] = -is_un_member & sort[] = is_un_member_at & sort[] = name</a>
-
 Sorting may also be applied accross database relations through dot notation.
 
 The following request will sort all available countries by descending capital population, i.e. largest first:
@@ -141,7 +137,7 @@ The `exact` filter will match results based on the exact value of a given field 
 
 The following request will return a list of countries that are currently UN member states:
 
-- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{is_un_member_at}=1945-10-24">api / countries / ? filter{is_un_member} = true</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{is_un_member}=true">api / countries / ? filter{is_un_member} = true</a>
 
 The following request will return a list of countries that became UN member states when the UN was founded:
 
