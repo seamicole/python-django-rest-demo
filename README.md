@@ -93,8 +93,8 @@ In the case of the city endpoint, search will return results matching `City.name
 
 The country endpoint search will return results matching `Country.name` and `Country.name_native`:
 
-- [api / cities / ? search = kor](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=kor)
-- [api / cities / ? search = 한](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=한)
+- [api / countries / ? search = kor](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=kor)
+- [api / countries / ? search = 한](https://drf-demo-backend-production.herokuapp.com/api/countries/?search=한)
 
 Finally, the currency endpoint search will return results matching `Currency.name`, `Currency.code`, `Currency.number`, and `Currency.country.name`:
 
@@ -103,14 +103,100 @@ Finally, the currency endpoint search will return results matching `Currency.nam
 - [api / currencies / ? search = 40](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=40)
 - [api / currencies / ? search = united](https://drf-demo-backend-production.herokuapp.com/api/currencies/?search=united)
 
-
-
-
-
 ### Sorting
+
+Each endpoint in this project supports sorting results by one or more fields, and in either direction.
+
+The following requests will sort all available countries by name, ascending and descending respectively:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=name">api / countries / ? sort[] = name</a>
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries/?sort[]=-name">api / countries / ? sort[] = -name</a>
+
+The following request will sort all available countries by United Nations member status, date of admission to the United Nations, and country name, respectively -- or more simply: by ascending date of membership:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?sort[]=-is_un_member&sort[]=is_un_member_at&sort[]=name">api / countries / ? sort[] = -is_un_member & sort[] = is_un_member_at & sort[] = name</a>
+
+Sorting may also be applied accross database relations through dot notation.
+
+The following request will sort all available countries by descending capital population, i.e. largest first:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?sort[]=-capital.population">api / countries / ? sort[] = -capital.population</a>
+
+Note that results with null values appear at the end of ascending lists by default, which means they appear at the beginning of the above results list. Refer to the [Filtering](#filtering) section for an example of how to omit them altogether.
 
 ### Filtering
 
+Each endpoint in this project supports filtering results by one or more field values.
+
+Once again, dot notation can be used to apply a filter operation accross database relations.
+
+#### Exact
+
+The `exact` filter will match results based on the exact value of a given field or set of fields:
+
+The following request will return a list of countries that are currently UN member states:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{is_un_member_at}=1945-10-24">api / countries / ? filter{is_un_member} = true</a>
+
+The following request will return a list of countries that became UN member states when the UN was founded:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{is_un_member_at}=1945-10-24">api / countries / ? filter{is_un_member_at} = 1945-10-24</a>
+
+The following request will return a list of countries that use the US Dollar as their primary currency:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{currency.code}=USD">api / countries / ? filter{currency.code} = USD</a>
+
+Note that the above request will return results that are equivalent to those of the country of currency endpoint:
+
+- [api / currencies / USD / countries /](https://drf-demo-backend-production.herokuapp.com/api/currencies/USD/countries)
+
+Note also that the `iexact` modifier can be added to string queries to make them case-insensitive:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{currency.code.iexact}=Usd">api / countries / ? filter{currency.code.iexact} = Usd</a>
+
+#### In
+
+The `in` filter will match results based on whether their exact value is one of a list of values.
+
+The following request will return a list of countries consisting of the United States and Australia:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{iso3.in}=USA&filter{iso3.in}=AUS">api / countries / ? filter{iso3.in} = USA & filter{iso3.in} = AUS</a>
+
+The following request will return a list of countries that use either the US Dollar or the Australian Dollar:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{currency.code.in}=USD&filter{currency.code.in}=AUD">api / countries / ? filter{currency.code.in} = USD & filter{currency.code.in} = AUD</a>
+
+
+#### Regex
+
+#### Contains
+
+#### Startswith and Endswith
+
+#### Greater Than and Less Than
+
+#### Is Null
+
+The following request will return a list of currencies that do not have a primary issuing country, e.g. the Euro:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/currencies?filter{country.isnull}=true">api / currencies / ? filter{country.isnull} = true</a>
+
+The following request will return a list of countries whose capitals have a non-null population:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{capital.population.isnull}=false">api / countries / ? filter{capital.population.isnull} = false</a>
+
+#### Inversions
+
+The results of any of the above filter operations can also be inverted in a similar way a reverse sort works.
+
+The following request returns a list of countries that DO NOT use the US Dollar as their primary currency:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{-currency.code}=USD">api / countries / ? filter{-currency.code} = USD</a>
+
+#### Further Reading
+
+Refer to the [Dynamic REST repository](https://github.com/AltSchool/dynamic-rest) and [documentation](https://dynamic-rest.readthedocs.io/en/latest/) for further information on supported operations.
 
 ## Local Installation
 
