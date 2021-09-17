@@ -154,6 +154,12 @@ Note also that the `iexact` modifier can be added to string queries to make them
 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{currency.code.iexact}=Usd">api / countries / ? filter{currency.code.iexact} = Usd</a>
 
+Furthermore, we'll notice that relation traversal applies to child relations as well as parent relations.
+
+The following request will return a list of countries who have at least one city named "Georgetown":
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{cities.name}=Georgetown">api / countries / ? filter{cities.name} = Georgetown</a>
+
 #### In
 
 The `in` filter will match results based on whether the exact value of a given field is one of a list of values.
@@ -182,7 +188,7 @@ The following request will do the same without regard to case, i.e. Denmark and 
 
 #### Startswith and Endswith
 
-The `startswith` and `endswith` filters match results based on whether the value of a given string field either starts or ends with a specified substring. Again, the `i` operator can be applied to make them case-insenstive.
+The `startswith` and `endswith` filters match results based on whether the value of a given string field either starts or ends with a specified substring. Again, the `i` modifier can be applied to make them case-insenstive.
 
 The following requests will return a list of countries whose name starts with "United":
 
@@ -195,6 +201,26 @@ The following requests will return a list of countries whose name ends with the 
 - <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{name.iendswith}=IA">api / countries / ? filter{name.iendswith} = IA</a>
 
 #### Greater Than and Less Than
+
+The `gt` and `lt` filters match results based whether the value of a given field is either greater than or less than a specified value. In this case, an `e` modifier can be suffixed to these filters to make them inclusive (equal to).
+
+The following requests will return a list of countries whose population is greater than (or equal to) one billion:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{population.gt}=1000000000">api / countries / ? filter{population.gt} = 1000000000</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{population.gte}=1000000000">api / countries / ? filter{population.gte} = 1000000000</a>
+
+The following requests will return a list of countries whose population is less than (or equal to) five million:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{population.lt}=5000000">api / countries / ? filter{population.lt} = 5000000</a>
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{population.lte}=5000000">api / countries / ? filter{population.lte} = 5000000</a>
+
+The following request will return a list of countries whose capital population is greater than or equal to ten million:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{capital.population.gte}=10000000">api / countries / ? filter{capital.population.gte} = 10000000</a>
+
+The following request will return a list of countries with at least one city whose population is greater than or equal to ten million:
+
+- <a href="https://drf-demo-backend-production.herokuapp.com/api/countries?filter{cities.population.gte}=10000000">api / countries / ? filter{cities.population.gte} = 10000000</a>
 
 #### Is Null
 
