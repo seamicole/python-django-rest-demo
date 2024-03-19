@@ -31,10 +31,10 @@ from currency.models import Currency
 
 @app.task(name="fetch-exchange-rates")
 def fetch_exchange_rates():
-    """ Fetches USD exchange rates for each Currency object """
+    """Fetches USD exchange rates for each Currency object"""
 
     # Define API url
-    url = "https://api.exchangerate.host/latest?base=USD"
+    url = "https://api.exchangerate-api.com/v4/latest/USD"
 
     # Make request to exchange rate API
     response = requests.get(url)
@@ -57,10 +57,8 @@ def fetch_exchange_rates():
 
     # Initialize atomic transaction block to reduce overhead
     with transaction.atomic():
-
         # Iterate over currency codes
         for pk, currency_code in currency_codes:
-
             # Get rate per USD
             per_usd = rates.get(currency_code)
 
