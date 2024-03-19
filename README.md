@@ -1,6 +1,6 @@
-# Python Django REST Demo
+# Django REST Demo
 
-Python Django REST Demo is a [Django REST Framework](https://github.com/encode/django-rest-framework) project reference for a [City](./location/models.py), [Country](./location/models.py), and [Currency](./currency/models.py) fixture API.
+Django REST Demo is a [Django REST Framework](https://github.com/encode/django-rest-framework) project reference for a [City](./location/models.py), [Country](./location/models.py), and [Currency](./currency/models.py) fixture API.
 
 <img align="right" src="./documentation/images/drf-demo-schema.png" alt="screenshot runserver in browser">
 
